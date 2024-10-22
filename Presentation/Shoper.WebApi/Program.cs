@@ -1,6 +1,7 @@
 
 using Shoper.Appplication.Interfaces;
 using Shoper.Appplication.Usecasess.CategoryService;
+using Shoper.Appplication.Usecasess.CustomerService;
 using Shoper.Persistance.Context;
 using Shoper.Persistance.Repositories;
 
@@ -15,6 +16,7 @@ namespace Shoper.WebApi
             builder.Services.AddDbContext<AppDbContext>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddScoped<ICategoryServices, CategoryService>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
 
             // Add services to the container.
 
